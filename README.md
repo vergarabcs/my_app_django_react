@@ -69,6 +69,8 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 
 ### Running the project (without docker)
 - Open a command line window and go to the project's directory.
+- Install Microsoft Visual C++ 14.0 if not already installed https://visualstudio.microsoft.com/visual-cpp-build-tools/
+- `cp requirements.in requirements.txt && cp dev-requirements.in dev-requirements.txt`
 - `pip install -r requirements.txt && pip install -r dev-requirements.txt`
 - `npm install`
 - `npm run start`
