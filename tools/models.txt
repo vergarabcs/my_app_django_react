@@ -1,0 +1,17 @@
+// a Room represents a Room. there is only winner. it does not contain details about the board. This model should be able to reuse even if the game/game mode changed.
+Room
+  joinCode
+  players m2m Player
+  winners m2m Player ordered
+  status: [Pending, InProgress, Over]
+  duration: Integer
+  expirationDate: DateField
+  game: GenericForeignKey()
+
+WordFactory
+  
+
+Player
+  name
+
+Match

@@ -1,0 +1,18 @@
+Rest apis:
+1. Create game api
+  - POST /api/room
+    - {name: 'Player2', game: 'Word Factory'}
+  Pseudo:
+    - Create new 'Room'
+    - Connect 'Player2' to websocket
+
+2. Join game api
+  - /api/join_room
+    - {code: 234234, name: 'Player1'}
+  Pseudo:
+    - Look for existing Pending game with code that is not expired.
+    - Check that name 'Player1' is not taken.
+    - connect Player1 to room websocket.
+
+Websocket apis:
+1. 

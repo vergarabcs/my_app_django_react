@@ -1,0 +1,25 @@
+deploy to elastic beanstalk https://github.com/aws/aws-elastic-beanstalk-cli-setup.
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html
+You already cloned to ~/Software
+Feb 23 2021
+- I wasn't able to deploy to aws. My debit card is getting blocked for some reason. I decided I will try google cloud platform instead. I already started the 90 day 300$ free tier.
+
+24
+- I installed gcloud
+- Credentials saved to file: [C:\Users\b.vergara\AppData\Roaming\gcloud\application_default_credentials.json]
+- I installed postgres local. user: postgres, password: Cilantro6!
+- I created postgres instance in cloud sql https://console.cloud.google.com/sql/instances/word-factory-db/overview?project=theta-moment-305721
+- todo: setup postgres with django locally https://www.enterprisedb.com/postgres-tutorials/how-use-postgresql-django
+
+26
+- postgres is setup locally. See pgadmin4. Migrations are also performed. local config has been applied.
+- I cloned django sample app in /tools
+- In progress: https://cloud.google.com/python/django/appengine#configuring_the_database_settings
+
+27
+- The settings.py the tutorial is talking about is the one in tools/python-docs-samples/run/django/mysite/settings.py
+- I was able to deploy to heroku.
+
+28
+- I decided doing the backend first is easier.
+
