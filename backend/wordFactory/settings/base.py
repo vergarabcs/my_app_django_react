@@ -112,3 +112,6 @@ CELERY_TIMEZONE = TIME_ZONE
 # Sentry
 SENTRY_DSN = config("SENTRY_DSN", default="")
 COMMIT_SHA = config("HEROKU_SLUG_COMMIT", default="")
+
+# Channels
+ASGI_APPLICATION = "wordFactory.asgi.application"
