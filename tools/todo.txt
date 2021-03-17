@@ -23,3 +23,9 @@ Feb 23 2021
 28
 - I decided doing the backend first is easier.
 
+15
+- I setup channels. Currently getting an error while following https://channels.readthedocs.io/en/stable/tutorial/part_2.html
+
+16
+- I resolved my issue with get_asgi_application yesterday. The solution is to use channels.http.AsgiHandler instead.
+- The tutorial made me run redis. I'm currently taking a crashcourse at https://www.youtube.com/watch?v=Hbt56gFj998
