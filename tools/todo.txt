@@ -29,3 +29,8 @@ Feb 23 2021
 16
 - I resolved my issue with get_asgi_application yesterday. The solution is to use channels.http.AsgiHandler instead.
 - The tutorial made me run redis. I'm currently taking a crashcourse at https://www.youtube.com/watch?v=Hbt56gFj998
+
+18
+- I downloaded docker and run redis with docker.
+- docker run -p 6379:6379 -d redis:5
+- I am now at https://channels.readthedocs.io/en/stable/tutorial/part_3.html

@@ -117,3 +117,11 @@ COMMIT_SHA = config("HEROKU_SLUG_COMMIT", default="")
 
 # Channels
 ASGI_APPLICATION = "wordFactory.asgi.application"
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
