@@ -2,9 +2,6 @@
 import * as Sentry from '@sentry/browser';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux'
-import store from './store'
-
 import './bootstrap-includes';
 import '../sass/style.scss';
 
@@ -15,11 +12,4 @@ Sentry.init({
   release: window.COMMIT_SHA,
 });
 
-ReactDOM.render(
-  (
-    <Provider store={store}>
-      <App />
-    </Provider>
-  ),
-  document.getElementById('root')
-);
+ReactDOM.render(<App />, document.getElementById('react-app'));
