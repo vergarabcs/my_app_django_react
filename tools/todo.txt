@@ -38,3 +38,6 @@ Feb 23 2021
 19
 - I solved the exampleapp not running problem. It seems importing Provider and store is causing the problem because it worked when I removed those.
 
+20
+- I created a script that runs react and python. It also kills process running when exited.
+- I will install drf. I am currently following drf tutorial.
