@@ -34,3 +34,7 @@ Feb 23 2021
 - I downloaded docker and run redis with docker.
 - docker run -p 6379:6379 -d redis:5
 - I am now at https://channels.readthedocs.io/en/stable/tutorial/part_3.html
+
+19
+- I solved the exampleapp not running problem. It seems importing Provider and store is causing the problem because it worked when I removed those.
+
