@@ -41,3 +41,7 @@ Feb 23 2021
 20
 - I created a script that runs react and python. It also kills process running when exited.
 - I will install drf. I am currently following drf tutorial.
+- I installed pylance vs code plugin.
+
+21
+- I created game app.
