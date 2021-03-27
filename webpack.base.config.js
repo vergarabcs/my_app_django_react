@@ -42,7 +42,7 @@ module.exports = {
     // defined in local or prod
   ],
   resolve: {
-    modules: ['node_modules', 'bower_components', path.resolve(__dirname, 'frontend/js/')],
+    modules: ['node_modules', 'bower_components', path.resolve(__dirname, 'src/js/')],
     extensions: ['.js', '.jsx'],
   },
 };

@@ -13,7 +13,7 @@ baseConfig.entry = [
   'react-hot-loader/patch',
   'whatwg-fetch',
   '@babel/polyfill',
-  './frontend/js/index.js',
+  './src/js/index.js',
 ];
 
 baseConfig.optimization = {
@@ -23,8 +23,8 @@ baseConfig.optimization = {
 };
 
 baseConfig.output = {
-  path: path.resolve('./frontend/bundles/'),
-  publicPath: 'http://localhost:3000/frontend/bundles/',
+  path: path.resolve('./src/bundles/'),
+  publicPath: 'http://localhost:3000/src/bundles/',
   filename: '[name].js',
 };
 

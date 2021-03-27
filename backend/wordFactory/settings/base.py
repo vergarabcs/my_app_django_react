@@ -27,7 +27,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "exampleapp.apps.ExampleappConfig",
     "chat.apps.ChatConfig",
-    
+
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "common",
     "users",
     "channels",
-    "rest_framework"
+    "rest_framework",
+    "game"
 ]
 
 MIDDLEWARE = [
@@ -93,7 +94,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-STATICFILES_DIRS = (base_dir_join("../frontend"),)
+STATICFILES_DIRS = (base_dir_join("../src"),)
 
 # Webpack
 WEBPACK_LOADER = {

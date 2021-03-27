@@ -1,8 +1,13 @@
-class Room:
-    default = Room.generateDefault()
+import json
 
-    @staticmethod
-    def generateDefault():
-        return "Hello World"
-    
-print(Room.default)
+import requests
+
+response = requests.post(
+    'http://localhost:8000/',
+    verify=False,
+    data=json.dumps=({
+        'Hello': 'World'
+    }),
+)
+
+print(response)

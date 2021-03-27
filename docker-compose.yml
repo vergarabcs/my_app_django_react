@@ -14,7 +14,7 @@ services:
 
   frontend:
     build:
-      dockerfile: frontend/Dockerfile
+      dockerfile: src/Dockerfile
       context: .
     volumes:
       - .:/app/

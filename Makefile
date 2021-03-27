@@ -32,8 +32,8 @@ clean_examples:
 	python backend/manage.py migrate exampleapp zero
 	# Removing backend example app files
 	rm -rf ./backend/exampleapp
-	# Removing frontend example app files
-	rm -rf ./frontend/js/app/example-app
+	# Removing src example app files
+	rm -rf ./src/js/app/example-app
 	# Removing example templates files
 	rm -rf ./backend/templates/exampleapp
 	# Remove exampleapp from settings

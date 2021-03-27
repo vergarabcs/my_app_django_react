@@ -83,7 +83,7 @@ After completing ALL of the above, remove this `Project bootstrap` section from 
 ### Running the project (with docker)
 - Open a command line window and go to the project's directory.
 - `docker-compose up -d `
-To access the logs for each service run `docker-compose logs -f service_name` (either backend, frontend, etc)
+To access the logs for each service run `docker-compose logs -f service_name` (either backend, src, etc)
 
 #### Celery
 - Open a command line window and go to the project's directory

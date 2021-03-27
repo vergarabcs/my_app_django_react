@@ -11,10 +11,10 @@ const nodeModulesDir = path.resolve(__dirname, 'node_modules');
 baseConfig.mode = 'production';
 baseConfig.devtool = 'source-map';
 
-baseConfig.entry = ['whatwg-fetch', '@babel/polyfill', './frontend/js/index.js'];
+baseConfig.entry = ['whatwg-fetch', '@babel/polyfill', './src/js/index.js'];
 
 baseConfig.output = {
-  path: path.resolve('./frontend/webpack_bundles/'),
+  path: path.resolve('./src/webpack_bundles/'),
   publicPath: '',
   filename: '[name]-[hash].js',
 };

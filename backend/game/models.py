@@ -1,12 +1,14 @@
 from __future__ import unicode_literals
 
 import datetime
-from utils import generateCode
 
+from django.contrib.postgres.fields import JSONField
 from django.db import models
 from django.utils import timezone
 
 # Create your models here.
+from utils import generateCode
+
 
 class Room(models.Model):
     PENDING = 'P'
@@ -17,10 +19,10 @@ class Room(models.Model):
         (IN_PROGRESS, 'In Progress'),
         (FINISHED, 'Finished'),
     ]
-    joinCode = models.CharField(default=Room.generateUniqueCode())
+    joinCode = models.CharField(max_length=10)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING)
     maxSize = models.PositiveIntegerField(default=5)
-    players = models.JSONField() #ordered field
+    players = JSONField() #ordered field-
     createAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -28,6 +30,7 @@ class Room(models.Model):
 
     def was_published_recently(self):
         now = timezone.now()
+        x = Room.generateUniqueCode()
         return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
     @staticmethod

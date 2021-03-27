@@ -1,2 +1,2 @@
-frontend/bundles/
-frontend/webpack_bundles/
+src/bundles/
+src/webpack_bundles/

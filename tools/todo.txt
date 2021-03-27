@@ -45,3 +45,8 @@ Feb 23 2021
 
 21
 - I created game app.
+
+23
+- I tried to move to PyCharm, sh*t happened.
+- I downloaded Postman installer.
+- I should test my create game endpoint already
