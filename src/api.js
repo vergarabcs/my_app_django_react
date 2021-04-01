@@ -10,7 +10,6 @@ const api = (options = {}) => {
   const fanalOptions = {
     ...axiosConfig,
     ...options,
-    url: "http://127.0.0.1:8000/game/room/",
     headers: {
       ...axiosConfig.headers,
       ...options.headers,

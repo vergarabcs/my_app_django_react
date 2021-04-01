@@ -36,6 +36,21 @@ class Room(models.Model):
     @staticmethod
     def generateUniqueCode():
         code = str(generateCode())
-        while(Room.objects.filter(joinCode=code).count() >= 1):
+        q_set = Room.objects.filter(joinCode=code)
+        count = q_set.count()
+        while(count >= 1):
             code = str(generateCode())
+            count = Room.objects.filter(joinCode=code).count()
+        return code
+
+    @staticmethod
+    def createDefault(creator_name: str):
+        joinCode = Room.generateUniqueCode()
+        room = Room.objects.create(
+            joinCode = joinCode,
+            players = [
+                creator_name
+            ]
+        )
+        return room
 

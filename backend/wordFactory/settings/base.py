@@ -27,7 +27,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "exampleapp.apps.ExampleappConfig",
     "chat.apps.ChatConfig",
-
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -41,7 +40,8 @@ INSTALLED_APPS = [
     "users",
     "channels",
     "rest_framework",
-    "game"
+    "game",
+    "django_extensions" #TODO: check if can be moved out of base.py
 ]
 
 MIDDLEWARE = [
@@ -123,7 +123,7 @@ CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
+            "hosts": [('127.0.0.1', 6379)], #TODO: change in production
         },
     },
 }

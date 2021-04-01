@@ -50,3 +50,13 @@ Feb 23 2021
 - I tried to move to PyCharm, sh*t happened.
 - I downloaded Postman installer.
 - I should test my create game endpoint already
+
+24
+- I have set up my testing. Next, I need to setup an api that will fool proof reset the database.
+
+25
+- I am now able to create a Room entry.
+- I've decided create room and connecting to websocket should be separate requests.
+
+26
+- To read: https://devcenter.heroku.com/articles/websocket-security
