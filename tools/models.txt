@@ -8,6 +8,11 @@ Room
   expirationDate: DateField
   game: GenericForeignKey()
 
+WsTicket
+  uuid
+  data
+  createDt
+
 WordFactory
   
 

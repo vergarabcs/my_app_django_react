@@ -11,10 +11,15 @@ def is_valid(room_name):
 class ChatConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         room_name = self.scope['url_route']['kwargs']['joinCode']
+        #Validate:
         room = Room.objects.filter(joinCode=room_name)
         if(len(room)<1):
             self.close()
             return
+
+        #Update room:
+
+
         self.room_name = room_name
         self.room_group_name = 'room_%s' % self.room_name
         # Join room group

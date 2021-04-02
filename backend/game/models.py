@@ -22,7 +22,7 @@ class Room(models.Model):
     joinCode = models.CharField(max_length=10)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING)
     maxSize = models.PositiveIntegerField(default=5)
-    players = JSONField() #ordered field-
+    players = JSONField() # count of players that are actually connected via WebSocket
     createAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -48,9 +48,7 @@ class Room(models.Model):
         joinCode = Room.generateUniqueCode()
         room = Room.objects.create(
             joinCode = joinCode,
-            players = [
-                creator_name
-            ]
+            players = []
         )
         return room
 

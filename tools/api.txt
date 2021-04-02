@@ -14,5 +14,33 @@ Rest apis:
     - Check that name 'Player1' is not taken.
     - connect Player1 to room websocket.
 
-Websocket apis:
-1. 
+Connect to websocket
+  * verify ticket is not expired
+  * delete ticket
+  
+Creating a room:
+* request to create_room
+  * request: {
+    gameName,
+    playerName
+  }
+  * create Room
+  * create WsTicket
+  * response: {
+    ticketCode
+  }
+* connect to websocket
+
+
+Joining a room:
+* request to create_ticket
+  * request: {
+    joinCode: string,
+    name: string,
+  }
+  * verify join code and name is no conflict. Tickets also has to be checked here for name conflict.
+  * Create WsTicket
+  * response: {
+    ticketCode: string
+  }
+* connect to websocket using ticketCode
