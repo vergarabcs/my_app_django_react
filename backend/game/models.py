@@ -19,10 +19,10 @@ class Room(models.Model):
         (IN_PROGRESS, 'In Progress'),
         (FINISHED, 'Finished'),
     ]
-    joinCode = models.CharField(max_length=10)
+    joinCode = models.CharField(max_length=10, unique=True)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING)
     maxSize = models.PositiveIntegerField(default=5)
-    players = JSONField() # count of players that are actually connected via WebSocket
+    players = JSONField(default='[]')
     createAt = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

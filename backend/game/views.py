@@ -13,6 +13,8 @@ class ApiCreateRoom(APIView):
         if serializer.is_valid():
             data = serializer.validated_data
             room = Room.createDefault(data['name'])
+            # insert joinCode
+            data['joinCode'] = room.joinCode
             ticket = WsTicket.create(data)
             return Response({
                 'joinCode': room.joinCode,

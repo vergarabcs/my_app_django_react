@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 
 import django_js_reverse.views
 
+from startupScript import startupScript
 
 urlpatterns = [
     path("", lambda request : redirect("/exampleapp/")),
@@ -14,3 +15,7 @@ urlpatterns = [
     path("chat/", include('chat.urls')),
     path("game/", include('game.urls')),
 ]
+
+#run startup script:
+#todo: remove in production
+startupScript()

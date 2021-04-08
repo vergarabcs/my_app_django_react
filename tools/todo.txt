@@ -60,3 +60,12 @@ Feb 23 2021
 
 26
 - To read: https://devcenter.heroku.com/articles/websocket-security
+
+27
+- Delete expired tickets when checking for room is full logic.
+- Delete ticket before calling self.accept on Consumer
+- Verify that "Ws connection should fail when ticket is expired" failed because ticket is expired not because it's already deleted.
+
+28
+- My Create and Join room api's tests are complete now.
+- Next, I will setup typescript.

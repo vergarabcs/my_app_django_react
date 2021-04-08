@@ -9,12 +9,12 @@ SECRET_KEY = "secret"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2", 
-        "NAME": 'postgres', 
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'Cilantro6!',
         'HOST': 'localhost',
-        'POST': '5432'
+        'PORT': '5432'
     }
 }
 
