@@ -69,3 +69,12 @@ Feb 23 2021
 28
 - My Create and Join room api's tests are complete now.
 - Next, I will setup typescript.
+
+29
+- I am done with the solutions finding algo
+- What I will do with board generation is, I will generate until we get a board with max
+score of 20 and above.
+
+30
+- I created generic relation wordfactory model
+- I will test it in 'test_generic_relation'

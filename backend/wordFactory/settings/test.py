@@ -4,7 +4,14 @@ from .base import *  # noqa
 SECRET_KEY = "test"
 
 DATABASES = {
-    "default": {"ENGINE": "django.db.backends.sqlite3", "NAME": base_dir_join("db.sqlite3"),}
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": 'test_db',
+        'USER': 'postgres',
+        'PASSWORD': 'Cilantro6!',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
 }
 
 STATIC_ROOT = base_dir_join('staticfiles')

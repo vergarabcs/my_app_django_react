@@ -16,9 +16,11 @@ class ApiCreateRoom(APIView):
             # insert joinCode
             data['joinCode'] = room.joinCode
             ticket = WsTicket.create(data)
+            room.token = ticket.code
+            room.save()
             return Response({
                 'joinCode': room.joinCode,
-                'ticketCode': ticket.code
+                'ticketCode': ticket.code,
             }, status.HTTP_201_CREATED)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
