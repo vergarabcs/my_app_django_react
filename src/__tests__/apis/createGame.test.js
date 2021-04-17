@@ -18,7 +18,6 @@ function connect(ticketCode) {
           resolve(server);
       };
       server.onerror = function(err) {
-          console.log('billOnError', err.isTrusted)
           reject(err);
       };
   });
@@ -42,11 +41,9 @@ describe('Create room Api test', () => {
         url: "http://127.0.0.1:8000/game/join_room/",
         data: jData
       });
-      console.log(resp.data)
       expect(resp?.data?.ticketCode).toBeDefined()
       ticketCode = resp.data.ticketCode
     }catch(error){
-      console.log('joinRoomError', error.response.data, jData)
       dummyFx()
     }
     expect(dummyFx).not.toHaveBeenCalled()
@@ -81,6 +78,24 @@ describe('Create room Api test', () => {
     data = resp.data
   });
 
+  test('Create a room fails when Game name is invalid', async () => {
+    const dummyFx = jest.fn();
+    try{
+      const resp = await api({
+        method: 'POST',
+        url: "http://127.0.0.1:8000/game/room/",
+        data: {
+          name: 'Bill',
+          game: 'Invalid game name'
+        }
+      });
+    }catch(error){
+      dummyFx();
+      console.log('bill Invalid Game', error.response.data)
+    }
+    expect(dummyFx).toHaveBeenCalled()
+  });
+
   test('Test join_room fails if not existing', async () => {
     const dummyFx = jest.fn();
     try{
@@ -105,7 +120,6 @@ describe('Create room Api test', () => {
     try{
       await uncaughtJoinRoom('Bill_0')
     }catch(error){
-      console.log('Error name is not unique', error.response.data)
       dummyFx()
     }
     expect(dummyFx).toHaveBeenCalled();
@@ -120,7 +134,6 @@ describe('Create room Api test', () => {
     try{
       await uncaughtJoinRoom()
     }catch(error){
-      console.log('Room Full Error', error.response.data)
       dummyFx()
     }
     expect(dummyFx).toHaveBeenCalled()
@@ -132,14 +145,12 @@ describe('Create room Api test', () => {
     try{
       const chatSocket2 = await connect(wrongJoinCode)
     }catch(error){
-      console.log('bill2', error)
       dummyFx();
     }
     expect(dummyFx).toHaveBeenCalled()
   })
 
   test('Web socket connection succeeds on a ticketCode one time only', async () => {
-    console.log('Ticket code should succeed', ticketCode)
     const dummyFx = jest.fn();
     try{
       chatSocket = await connect(ticketCode)

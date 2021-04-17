@@ -30,3 +30,8 @@ class BoardTestCase(TestCase):
         room.content_object = wordFactory
         room.save()
 
+    def scratch_test(self):
+        Room.createDefault(
+            creator_name='Bill',
+            game_name='Word Factory'
+        )

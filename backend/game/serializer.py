@@ -4,7 +4,7 @@ from rest_framework.exceptions import ValidationError
 from rest_framework.validators import UniqueForYearValidator, UniqueValidator
 
 from chat.models import WsTicket
-from game.models import Room
+from game.models import Room, Game
 
 
 # def validate_name(self, value):
@@ -44,7 +44,7 @@ def isExistingAndNotFull(joinCode):
 
 class SeriCreateRoom(serializers.Serializer):
     name = serializers.CharField(min_length=1)
-    game = serializers.CharField()
+    game = serializers.ChoiceField(choices=Game.GAME_CHOICES)
 
 class SeriJoinRoom(serializers.Serializer):
     joinCode = serializers.CharField(min_length=6, validators=[isExistingAndNotFull])

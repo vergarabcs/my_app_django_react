@@ -15,7 +15,7 @@ from game.words_loader import get_f_table
 from utils import generateCode
 
 class Game:
-    WORD_FACTORY = 'W'
+    WORD_FACTORY = 'Word Factory'
     GAME_CHOICES = [
         (WORD_FACTORY, 'Word Factory')
     ]
@@ -31,6 +31,7 @@ class Room(models.Model):
     ]
     joinCode = models.CharField(max_length=10, unique=True)
     status = models.CharField(max_length=2, choices=STATUS_CHOICES, default=PENDING)
+    activity_type = models.CharField(max_length=20, choices=Game.GAME_CHOICES, default=Game.WORD_FACTORY)
     maxSize = models.PositiveIntegerField(default=5)
     players = JSONField(default=list)
     createAt = models.DateTimeField(auto_now_add=True)
@@ -68,10 +69,11 @@ class Room(models.Model):
         return code
 
     @staticmethod
-    def createDefault(creator_name: str):
+    def createDefault(creator_name: str, game_name=Game.WORD_FACTORY):
         joinCode = Room.generateUniqueCode()
         room = Room.objects.create(
             joinCode = joinCode,
+            activity_type=game_name,
             players = []
         )
         return room

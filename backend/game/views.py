@@ -6,13 +6,12 @@ from chat.models import WsTicket
 from game.models import Room
 from game.serializer import SeriCreateRoom, SeriJoinRoom
 
-
 class ApiCreateRoom(APIView):
     def post(self, request, format=None):
         serializer = SeriCreateRoom(data = request.data)
         if serializer.is_valid():
             data = serializer.validated_data
-            room = Room.createDefault(data['name'])
+            room = Room.createDefault(data['name'], data['game'])
             # insert joinCode
             data['joinCode'] = room.joinCode
             ticket = WsTicket.create(data)

@@ -39,5 +39,6 @@ export const getNewTicketCode = async () => {
     }
   });
 
+  console.log('billNow', resp);
   return resp.ticketCode
 }
