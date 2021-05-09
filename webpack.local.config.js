@@ -6,6 +6,8 @@ const path = require('path');
 const baseConfig = require('./webpack.base.config');
 
 const nodeModulesDir = path.resolve(__dirname, 'node_modules');
+const createStyledComponentsTransformer = require('typescript-plugin-styled-components').default;
+const styledComponentsTransformer = createStyledComponentsTransformer();
 
 baseConfig.mode = 'development';
 
@@ -37,6 +39,14 @@ baseConfig.module.rules.push(
   {
     test: /\.(woff(2)?|eot|ttf)(\?v=\d+\.\d+\.\d+)?$/,
     loader: 'url-loader?limit=100000',
+  },
+  {
+    test: /\.tsx?$/,
+    exclude: [nodeModulesDir],
+    loader: 'awesome-typescript-loader',
+    options: {
+      getCustomTransformers: () => ({ before: [styledComponentsTransformer] })
+    }
   }
 );
 

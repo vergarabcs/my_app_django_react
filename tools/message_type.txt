@@ -1,0 +1,26 @@
+Message types
+
+A.) Client to Server
+1.) 'start_game'
+payload: {}
+
+2.) 'answer'
+payload: {
+  word: string
+}
+
+
+B.) Server to Client
+1.) 'start_game'
+payload: {
+
+}
+
+2.) 'answer_response'
+payload: {
+  word: string,
+  status: string
+}
+
+3.) 'end_game'
+payload: {}

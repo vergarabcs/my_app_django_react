@@ -78,3 +78,6 @@ score of 20 and above.
 30
 - I created generic relation wordfactory model
 - I will test it in 'test_generic_relation'
+
+31
+- I am currently planning for websocket connection management in frontend

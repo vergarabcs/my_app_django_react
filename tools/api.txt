@@ -44,3 +44,4 @@ Joining a room:
     ticketCode: string
   }
 * connect to websocket using ticketCode
+* 
