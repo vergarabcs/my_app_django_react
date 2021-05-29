@@ -17,7 +17,7 @@ Rest apis:
 Connect to websocket
   * verify ticket is not expired
   * delete ticket
-  
+
 Creating a room:
 * request to create_room
   * request: {
@@ -44,4 +44,4 @@ Joining a room:
     ticketCode: string
   }
 * connect to websocket using ticketCode
-* 
+*

@@ -1,8 +1,6 @@
 import moment from "moment";
-import pg, { Client } from 'pg'
+import { Client } from 'pg'
 import api from "./api";
-
-const connectionString = "postgres://postgres:Cilantro6!@postgres/127.0.0.1:5432/postgres";
 
 export const makeTicketExpired = async (ticketCode) => {
   let pgClient = new Client({
@@ -40,5 +38,5 @@ export const getNewTicketCode = async () => {
   });
 
   console.log('billNow', resp);
-  return resp.ticketCode
+  return resp.data.ticketCode
 }
