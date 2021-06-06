@@ -22,6 +22,7 @@ const App = () => {
           Hello
         </AppBar>
         <AppContent>
+          {/* <WSManager/> */}
           <WordFactory/>
         </AppContent>
       </AppLayout>

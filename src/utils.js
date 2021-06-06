@@ -40,3 +40,15 @@ export const getNewTicketCode = async () => {
   console.log('billNow', resp);
   return resp.data.ticketCode
 }
+
+export function connect(ticketCode) {
+  return new Promise(function(resolve, reject) {
+      var server = new WebSocket(`ws://localhost:8000/ws/room/${ticketCode}/`);
+      server.onopen = function() {
+          resolve(server);
+      };
+      server.onerror = function(err) {
+          reject(err);
+      };
+  });
+}

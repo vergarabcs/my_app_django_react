@@ -84,3 +84,7 @@ score of 20 and above.
 
 32
 - Connect Frontend and Backend Single Player Mode
+- Finish api tests
+
+33
+- I setup the test for sending ws apis
