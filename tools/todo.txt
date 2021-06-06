@@ -81,3 +81,6 @@ score of 20 and above.
 
 31
 - I am currently planning for websocket connection management in frontend
+
+32
+- Connect Frontend and Backend Single Player Mode

@@ -2,7 +2,7 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
-  C:\Users\b.vergara\Documents\Tutorials\django-react\venv\Scripts;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\b.vergara\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\110\Tools\Binn;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\nodejs;C:\Program Files\Perforce;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\usr\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\b.vergara\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\b.vergara\AppData\Local\Programs\Python\Python38-32;C:\Users\b.vergara\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\bin;C:\Users\b.vergara\AppData\Local\Yarn\bin;C:\Users\b.vergara\AppData\Local\Programs\Microsoft VS Code\bin;C:\bin;C:\Users\b.vergara\Desktop\MinGW\bin;C:\Users\b.vergara\AppData\Roaming\npm;C:\Users\b.vergara\AppData\Local\gitkraken\bin;C:\Program Files\Git\usr\bin;C:\Users\b.vergara\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
+  C:\Users\b.vergara\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\b.vergara\bin;C:\Program Files\AdoptOpenJDK\jdk-11.0.11.9-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Microsoft SQL Server\110\Tools\Binn;C:\Program Files (x86)\Microsoft SDKs\TypeScript\1.0;C:\Program Files\Microsoft SQL Server\120\Tools\Binn;C:\Program Files\nodejs;C:\Program Files\Perforce;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\usr\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\b.vergara\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\b.vergara\AppData\Local\Programs\Python\Python38-32;C:\Users\b.vergara\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\bin;C:\Users\b.vergara\AppData\Local\Yarn\bin;C:\Users\b.vergara\AppData\Local\Programs\Microsoft VS Code\bin;C:\bin;C:\Users\b.vergara\Desktop\MinGW\bin;C:\Users\b.vergara\AppData\Roaming\npm;C:\Users\b.vergara\AppData\Local\gitkraken\bin;C:\Program Files\Git\usr\bin;C:\Users\b.vergara\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
   1.22.4
@@ -26,7 +26,7 @@ npm manifest:
     "main": "index.js",
     "prettier": "eslint-config-vinta/prettier",
     "scripts": {
-      "test": "react-scripts test ./tests",
+      "test": "react-scripts test --watch=false --testPathPattern=wordFactory/src/__tests__/* --testTimeout=9999999 ",
       "test:watch": "npm test -- --watch",
       "test:update": "npm test -- --u",
       "start": "babel-node server.js",
@@ -40,8 +40,9 @@ npm manifest:
       "@babel/preset-env": "~7.8.4",
       "@babel/preset-react": "~7.8.3",
       "@sentry/browser": "~5.14.2",
-      "@types/react": "~16.9.0",
+      "@types/react": "^17.0.3",
       "autoprefixer": "~9.7.4",
+      "axios": "^0.21.1",
       "bootstrap": "~4.3.1",
       "classnames": "~2.2.5",
       "css-loader": "~3.4.0",
@@ -51,6 +52,7 @@ npm manifest:
       "jquery": "~3.5.0",
       "lodash": "~4.17.4",
       "marked": "~0.8.0",
+      "moment": "^2.29.1",
       "node-sass": "~4.13.1",
       "popper.js": "~1.16.0",
       "postcss": "~7.0.13",
@@ -63,28 +65,32 @@ npm manifest:
       "react-scripts": "^4.0.3",
       "redux": "~4.0.0",
       "redux-saga": "^1.1.3",
+      "redux-thunk": "^2.3.0",
       "resolve-url-loader": "~3.1.1",
       "sass-loader": "~8.0.0",
       "script-loader": "~0.7.0",
       "style-loader": "~1.1.2",
+      "styled-components": "^5.3.0",
       "url-loader": "~3.0.0",
-      "webpack": "~4.41.5",
+      "webpack": "^4.41.5",
       "webpack-bundle-tracker": "~0.4.2-beta",
-      "webpack-dev-server": "~3.10.1",
+      "webpack-dev-server": "^3.10.1",
       "whatwg-fetch": "~2.0.3"
     },
     "devDependencies": {
       "@babel/core": "~7.8.4",
       "@babel/node": "~7.8.4",
       "@hot-loader/react-dom": "^16.11.0",
+      "@types/jest": "^26.0.23",
+      "@types/pg": "^8.6.0",
+      "@types/styled-components": "^5.1.9",
       "ajv": "~6.10.0",
+      "awesome-typescript-loader": "^5.2.1",
       "babel-core": "~7.0.0-bridge.0",
       "babel-eslint": "~10.1.0",
-      "babel-jest": "~23.6.0",
       "enzyme": "~3.11.0",
       "enzyme-adapter-react-16": "~1.15.2",
       "enzyme-to-json": "~3.4.0",
-      "eslint": "~6.8.0",
       "eslint-config-prettier": "~6.10.1",
       "eslint-config-vinta": "~1.4.5",
       "eslint-import-resolver-webpack": "~0.12.0",
@@ -99,11 +105,13 @@ npm manifest:
       "eslint-plugin-sonarjs": "~0.5.0",
       "eslint-plugin-unicorn": "~15.0.1",
       "identity-obj-proxy": "~3.0.0",
-      "jest": "~23.6.0",
       "jest-css-modules": "~2.1.0",
       "mini-css-extract-plugin": "~0.9.0",
+      "pg": "^8.5.1",
       "prettier": "~1.19.1",
       "redux-mock-store": "~1.5.3",
+      "typescript": "^4.2.4",
+      "typescript-plugin-styled-components": "^1.5.0",
       "webpack-cli": "~3.3.2"
     },
     "resolutions": {

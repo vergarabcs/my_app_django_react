@@ -101,7 +101,9 @@ const WordFactory = () => {
             type="text"
             onKeyDown={(e) => onKeyPress(e)}
           />
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton onClick={() => dispatch(handleSubmit())}>
+            Submit
+          </SubmitButton>
         </InputController>
         <Wrapper>
           <Board/>

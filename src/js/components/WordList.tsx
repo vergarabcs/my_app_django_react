@@ -10,11 +10,11 @@ const WordListStyle = styled.div`
   display: flex;
   flex-direction: column;
   overflow-y: auto;
-  height: 70vmin;
   font-weight: bold;
   border: 2px solid gray;
   border-radius: 10px;
   padding: 5px;
+  height: 60vmin;
 
   /* width */
   ::-webkit-scrollbar {
@@ -45,10 +45,25 @@ const WordStyle = styled.div`
   margin-bottom: 2px;
 `
 
+const Score = styled.div`
+  height: 10vmin;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 2.5vmin;
+  background-color: gold;
+`
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 70vmin;
+`
+
 export const WordList = () => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const enteredWords = useSelector((state: RootState) => state.wfState.enteredWords);
+  const { enteredWords, score } = useSelector((state: RootState) => state.wfState);
   const wordElements: ReactNode[] =  [];
 
   const scrollToBottom = () => {
@@ -60,26 +75,23 @@ export const WordList = () => {
     scrollToBottom()
   }, [enteredWords]);
 
-  for(let i=0 ; i<30 ; i++){
+  enteredWords.forEach((word, word_i) => {
     wordElements.push(
-      <WordStyle key={i}>
-        {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'}
+      <WordStyle key={word_i}>
+        {word}
       </WordStyle>
-    );
-  }
-
-  for(let i=0 ; i<enteredWords.length ; i++){
-    wordElements.push(
-      <WordStyle key={i}>
-        {enteredWords[i]}
-      </WordStyle>
-    );
-  }
+    )
+  })
 
   return (
-    <WordListStyle>
-      {wordElements}
-      <div ref={messagesEndRef} />
-    </WordListStyle>
+    <Wrapper>
+      <Score>
+        Score: {score}
+      </Score>
+      <WordListStyle>
+        {wordElements}
+        <div ref={messagesEndRef} />
+      </WordListStyle>
+    </Wrapper>
   );
 }

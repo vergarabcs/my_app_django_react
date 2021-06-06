@@ -18,7 +18,8 @@ const BOARD_LETTERS: ICube[][] = temp.map((row) => (
 const initialState: WFState = {
   enteredWords: [],
   boardModel: BOARD_LETTERS,
-  selectOrderList: []
+  selectOrderList: [],
+  score: 0
 }
 
 // Use the initialState as a default value

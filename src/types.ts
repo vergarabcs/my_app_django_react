@@ -25,6 +25,7 @@ export interface WFState {
   enteredWords: string[];
   boardModel: ICube[][];
   selectOrderList: number[][];
+  score: number;
 }
 
 export interface IAction {
